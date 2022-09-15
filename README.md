@@ -1,0 +1,3 @@
+# typing-speed-test
+Typing speed testing application with GUI
+Created using Python and its libraries, tkinter, threading, time ...
