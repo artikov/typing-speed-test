@@ -37,9 +37,9 @@ def time_thread():
 
         app.speed_label.config(text=f'Speed: \n'
                                     f'{cps:.2f} CPS \n'
-                                    f'{cpm:2.f} CPM \n'
-                                    f'{wps:2.f} WPS \n'
-                                    f'{wpm:2.f} WPM \n')
+                                    f'{cpm:.2f} CPM \n'
+                                    f'{wps:.2f} WPS \n'
+                                    f'{wpm:.2f} WPM \n')
 
 
 # functionality of reset button
