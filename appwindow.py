@@ -3,23 +3,19 @@ import tkinter as tk
 
 
 class TypeSpeedGUI:
-    def __init__(self):
-        self.window = tk.Tk()
-        self.window.title('Typing speed Tester')
-        self.window.geometry('800x600')
-
+    def __init__(self, start, reset, window):
         self.text = open('data.txt', 'r').read().split('\n')
 
-        self.frame = tk.Frame(self.window)
+        self.frame = tk.Frame(window)
 
-        self.sample_label = tk.Label(self.window, text=random.choice(self.text), font=('Arial', 18))
+        self.sample_label = tk.Label(self.frame, text=random.choice(self.text), font=('Arial', 18))
         self.sample_label.grid(row=0, column=0, columnspan=2, padx=5, pady=5)
 
         self.input_entry = tk.Entry(self.frame, width=40, font=('Arial', 24))
         self.input_entry.grid(row=1, column=0, columnspan=2, padx=5, pady=10)
 
         # function to start automatically when key is pressed
-        self.input_entry.bind('<KeyPress>', self.start)
+        self.input_entry.bind('<KeyPress>', start)
 
         # timer label
         self.speed_label = tk.Label(self.frame, text="Speed: \n"
@@ -31,7 +27,7 @@ class TypeSpeedGUI:
         self.speed_label.grid(row=2, column=0, columnspan=2, padx=5, pady=10)
 
         # reset button
-        self.reset_button = tk.Button(self.frame, text='Reset', command=self.reset, font=('Arial', 24))
+        self.reset_button = tk.Button(self.frame, text='Reset', command=reset, font=('Arial', 24))
         self.reset_button.grid(row=3, column=0, columnspan=2, padx=5, pady=10)
 
         self.frame.pack(expand=True)
